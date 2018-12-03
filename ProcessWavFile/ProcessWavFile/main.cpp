@@ -1,6 +1,8 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <stdio.h>
 #include "WAVheader.h"
 #include "inverter.h"
 
@@ -17,7 +19,6 @@ double sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
 //-------------------------------------------------
 const double initial_input_gain = 0.501187;			// (-6dB)
 const double initial_headroom_gain = 0.707946;		// (-3dB)
-
 //-------------------------------------------------
 
 void processing(inverter_data_t* inverter);
@@ -76,12 +77,12 @@ int main(int argc, char* argv[])
 	// Processing loop
 	//-------------------------------------------------	
 	{
-
 		int sample;
 		int BytesPerSample = inputWAVhdr.fmt.BitsPerSample/8;
 		const double SAMPLE_SCALE = -(double)(1 << 31);		//2^31
 		int iNumSamples = inputWAVhdr.data.SubChunk2Size/(inputWAVhdr.fmt.NumChannels*inputWAVhdr.fmt.BitsPerSample/8);
-		
+
+
 		// exact file length should be handled correctly...
 		for(int i=0; i<iNumSamples/BLOCK_SIZE; i++)
 		{	
@@ -109,7 +110,7 @@ int main(int argc, char* argv[])
 			}		
 		}
 	}
-	
+
 	// Close files
 	//-------------------------------------------------	
 	fclose(wav_in);
