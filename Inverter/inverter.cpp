@@ -6,20 +6,13 @@
  *
  */
 
-typedef struct {
-	float degree;
-	float gain;
-} inverter_data_t;
-
 void audio_invert_init(inverter_data_t * data, float degree, float gain)
 {
 	data->degree = degree;
 	data->gain = gain;
 }
 
-void
-gst_audio_invert_transform(inverter_data_t * data,
-float * input, float * output, unsigned int num_samples)
+void gst_audio_invert_transform(inverter_data_t * data, float * input, float * output, unsigned int num_samples)
 {
   int i;
   float dry = 1.0 - data->degree;
