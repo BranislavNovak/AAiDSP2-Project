@@ -1,11 +1,16 @@
+#include "fixed_point_math.h"
+#include "stdfix_emu.h"
+
 #define BLOCK_SIZE 16
 #define MAX_NUM_CHANNEL 8
 #define CHANNEL_NUMBER 5
 #define MINUS_TWO_DB 0.794328
 #define MINUS_SIX_DB 0.501187
 
-// Initialization constants
-//-------------------------------------------------
-const double initial_input_gain = 0.501187;			// (-6dB)
-const double initial_headroom_gain = 0.707946;		// (-3dB)
-//-------------------------------------------------
+/* DSP type definitions */
+typedef short DSPshort;					/* DSP integer */
+typedef unsigned short DSPushort;		/* DSP unsigned integer */
+typedef int DSPint;						/* native integer */
+typedef fract DSPfract;					/* DSP fixed-point fractional */
+typedef long_accum DSPaccum;			/* DSP fixed-point fractional */
+/* Initialization constants */

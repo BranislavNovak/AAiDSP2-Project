@@ -9,25 +9,26 @@
 #include "common.h"
 #include <stdio.h>
 
-void audio_invert_init(inverter_data_t * data, float degree, float gain)
+void audio_invert_init(inverter_data_t * data, DSPfract degree, DSPfract gain)
 {
-	data->degree = degree;
-	data->gain = gain;
+//	data->degree = degree;
+//	data->gain = gain;
+	data->degree = FRACT_NUM(0.0);
+	data->gain = FRACT_NUM(-0.99);
 }
 
-void gst_audio_invert_transform(inverter_data_t * data, double * input, double * output)
+void gst_audio_invert_transform(inverter_data_t * data, DSPfract * input, DSPfract * output)
 {
-  int i;
-  float dry = 1.0 - data->degree;
-  float val;
+  DSPint i;
+  DSPfract dry = FRACT_NUM(0.999) - data->degree;
+  dry = dry + FRACT_NUM(0.001);
+  DSPaccum val;
 
-  //for (ptr_in = input, ptr_out = output; ptr_in < (input + BLOCK_SIZE); ptr_in++, ptr_out++) {
   for(i = 0; i < BLOCK_SIZE; i++)
   {
-	//val = input[i] * dry - (1.0 + input[i]) * data->degree;
-    //output[i] = (double)(val * data->gain);
-
-	val = (*input) * dry - (1.0 + (*input++)) * data->degree;
-	(*output++) = (double)(val * data->gain);
+	val = (*input) * (dry) - (FRACT_NUM(0.9990) + (*input)) * data->degree;
+	input++;
+	(*output) = (DSPfract)val * data->gain;
+	output++;
   }
 }

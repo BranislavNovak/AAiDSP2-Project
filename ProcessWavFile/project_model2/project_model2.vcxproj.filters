@@ -27,6 +27,12 @@
     <ClInclude Include="WAVheader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="fixed_point_math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdfix_emu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="inverter.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="WAVheader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdfix_emu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fixed_point_math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
