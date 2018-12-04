@@ -1,1 +1,11 @@
-﻿
+﻿  WAVheader.cpp
+  processing.cpp
+  main.cpp
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\project_model1\main.cpp(92): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  inverter.cpp
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\project_model1\inverter.cpp(19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\project_model1\inverter.cpp(22): warning C4018: '<': signed/unsigned mismatch
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\project_model1\inverter.cpp(23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  project_model1.vcxproj -> D:\ra221-2015\AAiDSP2\Vezbe\Projekat\ProcessWavFile\Debug\project_model1.exe
+  project_model1.vcxproj -> D:\ra221-2015\AAiDSP2\Vezbe\Projekat\ProcessWavFile\Debug\project_model1.pdb (Partial PDB)

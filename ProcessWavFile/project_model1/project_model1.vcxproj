@@ -19,12 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common.h" />
     <ClInclude Include="inverter.h" />
+    <ClInclude Include="processing.h" />
     <ClInclude Include="WAVheader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="inverter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="processing.cpp" />
     <ClCompile Include="WAVheader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
