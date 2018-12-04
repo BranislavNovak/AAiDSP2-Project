@@ -8,11 +8,7 @@ double rightTmpBuffer[BLOCK_SIZE];
 
 void processing()
 {
-	// L  sampleBuffer[0]
-	// R  sampleBuffer[1]
-	// C  sampleBuffer[2]
-	// Ls sampleBuffer[3]
-	// Rs sampleBuffer[4]
+	// L  sampleBuffer[0]		R  sampleBuffer[1]		C  sampleBuffer[2]		Ls sampleBuffer[3]		Rs sampleBuffer[4]  //
 
 	double* ptr = NULL;
 	double* ptr_tmp_left = leftTmpBuffer;
@@ -22,8 +18,8 @@ void processing()
 	for (ptr = sampleBuffer[0]; ptr < sampleBuffer[0] + BLOCK_SIZE; ptr++)
 	{
 		// Passing left and right channel with -6dB gain and saving current state to tmp buffers.
-		*ptr *= initial_input_gain;							// L*(-6dB)
-		*ptr_tmp_left++ = *ptr;								// Saving state to LEFT tmp buffer
+		*ptr *= initial_input_gain;									// L*(-6dB)
+		*ptr_tmp_left++ = *ptr;										// Saving state to LEFT tmp buffer
 
 		*(ptr + BLOCK_SIZE) *= initial_input_gain;					// R*(-6dB)
 		*ptr_tmp_right++ = *(ptr + BLOCK_SIZE);						// Saving state to RIGHT tmp buffer
@@ -36,10 +32,10 @@ void processing()
 	}
 
 	// Passing left surround with inverter and -2dB gain
-	gst_audio_invert_transform(&inverter, leftTmpBuffer, leftTmpBuffer, BLOCK_SIZE);
+	gst_audio_invert_transform(&inverter, leftTmpBuffer, leftTmpBuffer);
 
 	// Passing left surround with inverter and -2dB gain
-	gst_audio_invert_transform(&inverter, rightTmpBuffer, rightTmpBuffer, BLOCK_SIZE);
+	gst_audio_invert_transform(&inverter, rightTmpBuffer, rightTmpBuffer);
 
 	// Reset tmp values
 	ptr_tmp_left = leftTmpBuffer;

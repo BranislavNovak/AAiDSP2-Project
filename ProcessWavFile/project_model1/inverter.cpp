@@ -6,6 +6,8 @@
  *
  */
 #include "inverter.h"
+#include "common.h"
+#include <stdio.h>
 
 void audio_invert_init(inverter_data_t * data, float degree, float gain)
 {
@@ -13,14 +15,19 @@ void audio_invert_init(inverter_data_t * data, float degree, float gain)
 	data->gain = gain;
 }
 
-void gst_audio_invert_transform(inverter_data_t * data, double * input, double * output, unsigned int num_samples)
+void gst_audio_invert_transform(inverter_data_t * data, double * input, double * output)
 {
   int i;
   float dry = 1.0 - data->degree;
   float val;
 
-  for (i = 0; i < num_samples; i++) {
-	val = input[i] * dry - (1.0 + input[i]) * data->degree;
-    output[i] = (double)(val * data->gain);
+  //for (ptr_in = input, ptr_out = output; ptr_in < (input + BLOCK_SIZE); ptr_in++, ptr_out++) {
+  for(i = 0; i < BLOCK_SIZE; i++)
+  {
+	//val = input[i] * dry - (1.0 + input[i]) * data->degree;
+    //output[i] = (double)(val * data->gain);
+
+	val = (*input) * dry - (1.0 + (*input++)) * data->degree;
+	(*output++) = (double)(val * data->gain);
   }
 }
