@@ -16,7 +16,8 @@ int main(int argc, char* argv[])
 	char WavInputName[256];
 	char WavOutputName[256];
 	WAV_HEADER inputWAVhdr, outputWAVhdr;
-	
+	float argv3 = (float)atof(argv[3]);
+	float argv4 = (float)atof(argv[4]);
 	
 	// Init channel buffers
 	for (int i = 0; i<MAX_NUM_CHANNEL; i++)
@@ -32,7 +33,7 @@ int main(int argc, char* argv[])
 
 	// Get degree and gain parameters
 	//-------------------------------------------------
-	audio_invert_init(&inverter, (float)atof(argv[3]), (float)atof(argv[4]));
+	audio_invert_init(&inverter, argv3, argv4);
 	//-------------------------------------------------
 
 	// Read input wav header

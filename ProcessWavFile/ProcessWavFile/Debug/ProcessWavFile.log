@@ -1,1 +1,17 @@
-﻿
+﻿  WAVheader.cpp
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\wavheader.cpp(84): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  main.cpp
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\main.cpp(108): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\main.cpp(43): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\main.cpp(45): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+  inverter.cpp
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\inverter.cpp(19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\inverter.cpp(22): warning C4018: '<': signed/unsigned mismatch
+d:\ra221-2015\aaidsp2\vezbe\projekat\processwavfile\processwavfile\inverter.cpp(23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+inverter.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  ProcessWavFile.vcxproj -> D:\ra221-2015\AAiDSP2\Vezbe\Projekat\ProcessWavFile\Debug\project_model0.exe
+  ProcessWavFile.vcxproj -> D:\ra221-2015\AAiDSP2\Vezbe\Projekat\ProcessWavFile\Debug\project_model0.pdb (Full PDB)

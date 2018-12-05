@@ -14,6 +14,7 @@ const DSPfract initial_input_gain = 0.501187;			// (-6dB)
 const DSPfract initial_headroom_gain = 0.707946;		// (-3dB)
 //-------------------------------------------------
 
+// D:\ra221-2015\AAiDSP2\Vezbe\Projekat\TestStreams\titanic_horn.wav D:\ra221-2015\AAiDSP2\Vezbe\Projekat\OutStreams\titanic_horn_model0.wav 0 -0.99
 DSPint main(DSPint argc, char* argv[])
 {
 	FILE *wav_in = NULL;
@@ -21,7 +22,8 @@ DSPint main(DSPint argc, char* argv[])
 	char WavInputName[256];
 	char WavOutputName[256];
 	WAV_HEADER inputWAVhdr, outputWAVhdr;
-
+	DSPfract argv3 = FRACT_NUM(atof(argv[3]));
+	DSPfract argv4 = FRACT_NUM(atof(argv[4]));
 
 	// Init channel buffers
 	for (DSPint i = 0; i < MAX_NUM_CHANNEL; i++)
@@ -31,7 +33,6 @@ DSPint main(DSPint argc, char* argv[])
 			sampleBuffer[i][j] = FRACT_NUM(0.0);
 		}
 	}
-
 
 	// Open input and output wav files
 	//-------------------------------------------------
@@ -43,7 +44,7 @@ DSPint main(DSPint argc, char* argv[])
 
 	// Get degree and gain parameters
 	//-------------------------------------------------
-	audio_invert_init(&inverter, FRACT_NUM(atof(argv[3])), FRACT_NUM(atof(argv[4])));
+	audio_invert_init(&inverter, argv3, argv4);
 	//-------------------------------------------------
 
 	// Read input wav header
