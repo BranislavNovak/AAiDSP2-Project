@@ -4,7 +4,7 @@ SET CONFIGURATION=..\ProcessWavFile\Debug
 
 
 : TO DO: Add additional command line args for your program
-SET ADDITIONAL_ARGS=0.0 -0.99
+SET ADDITIONAL_ARGS=1 0.5
 SET PROJECT_NAME=project
 
 SET COMPARE="..//Tools//PCMCompare.exe"

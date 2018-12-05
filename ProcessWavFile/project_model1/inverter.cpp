@@ -21,12 +21,8 @@ void gst_audio_invert_transform(inverter_data_t * data, double * input, double *
   float dry = 1.0 - data->degree;
   float val;
 
-  //for (ptr_in = input, ptr_out = output; ptr_in < (input + BLOCK_SIZE); ptr_in++, ptr_out++) {
   for(i = 0; i < BLOCK_SIZE; i++)
   {
-	//val = input[i] * dry - (1.0 + input[i]) * data->degree;
-    //output[i] = (double)(val * data->gain);
-
 	val = (*input) * dry - (1.0 + (*input++)) * data->degree;
 	(*output++) = (double)(val * data->gain);
   }

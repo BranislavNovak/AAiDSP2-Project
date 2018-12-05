@@ -89,8 +89,20 @@
         <excluded_files/>
         <objectFiles>
             <objectFile isExported="false" isAdditional="false">
+                <objectFilePath>src/inverter.O</objectFilePath>
+                <containingProject>project_model3</containingProject>
+                <isExcluded>false</isExcluded>
+                <outputFolder>output</outputFolder>
+            </objectFile>
+            <objectFile isExported="false" isAdditional="false">
                 <objectFilePath>src/main.O</objectFilePath>
-                <containingProject>WavTemplate</containingProject>
+                <containingProject>project_model3</containingProject>
+                <isExcluded>false</isExcluded>
+                <outputFolder>output</outputFolder>
+            </objectFile>
+            <objectFile isExported="false" isAdditional="false">
+                <objectFilePath>src/processing.O</objectFilePath>
+                <containingProject>project_model3</containingProject>
                 <isExcluded>false</isExcluded>
                 <outputFolder>output</outputFolder>
             </objectFile>
