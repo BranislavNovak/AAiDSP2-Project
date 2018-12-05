@@ -32,16 +32,12 @@ DSPint main(DSPint argc, char* argv[])
 
 		// Init channel buffers
 	    for (i = 0; i < MAX_NUM_CHANNEL; i++)
-	    {
 	    	for (j = 0; j < BLOCK_SIZE; j++)
-	    	{
 	    		sampleBuffer[i][j] = FRACT_NUM(0.0);
-	    	}
-	    }
 
 		// Open input wav file
 		//-------------------------------------------------
-		strcpy(WavInputName,argv[1]);
+		strcpy(WavInputName, "../TestStreams/titanic_horn.wav");
 		wav_in = cl_wavread_open(WavInputName);
 		 if(wav_in == NULL)
 	    {
@@ -60,7 +56,7 @@ DSPint main(DSPint argc, char* argv[])
 
 		// Open output wav file
 		//-------------------------------------------------
-		strcpy(WavOutputName,argv[2]);
+		strcpy(WavOutputName, "../OutStreams/titanic_horn_model3.wav");
 		wav_out = cl_wavwrite_open(WavOutputName, bitsPerSample, nChannels+3, sampleRate);
 		if(!wav_out)
 	    {
@@ -95,7 +91,7 @@ DSPint main(DSPint argc, char* argv[])
 
 				for(j=0; j<BLOCK_SIZE; j++)
 				{
-					for(k=0; k<nChannels; k++)
+					for(k=0; k<nChannels+3; k++)
 					{
 						sample = bitsr(sampleBuffer[k][j]);
 						cl_wavwrite_sendsample(wav_out, sample);
