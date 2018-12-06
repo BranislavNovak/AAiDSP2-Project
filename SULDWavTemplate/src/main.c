@@ -27,9 +27,6 @@ DSPint main(DSPint argc, char* argv[])
 	    DSPint i;
 	    DSPint j;
 
-	    //DSPfract argv3 = 0.0;
-	    //DSPfract argv4 = -0.99;
-
 		// Init channel buffers
 	    for (i = 0; i < MAX_NUM_CHANNEL; i++)
 	    	for (j = 0; j < BLOCK_SIZE; j++)

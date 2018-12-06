@@ -7,7 +7,7 @@ DSPfract initial_input_gain = 0.501187;				// (-6dB)
 DSPfract initial_headroom_gain = 0.707946;			// (-3dB)
 __memX DSPfract leftTmpBuffer[BLOCK_SIZE];
 __memX DSPfract rightTmpBuffer[BLOCK_SIZE];
-
+/*
 void processing()
 {
 	// L  sampleBuffer[0]		R  sampleBuffer[1]		C  sampleBuffer[2]		Ls sampleBuffer[3]		Rs sampleBuffer[4]  //
@@ -69,3 +69,4 @@ void processing()
 		ptr++;
 	}
 }
+*/
