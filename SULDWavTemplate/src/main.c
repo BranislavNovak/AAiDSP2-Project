@@ -9,8 +9,8 @@
 #include "stdfix_emu.h"
 
 
-inverter_data_t inverter;
-DSPfract sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
+__memY inverter_data_t inverter;
+__memY DSPfract sampleBuffer[MAX_NUM_CHANNEL][BLOCK_SIZE];
 
 DSPint main(DSPint argc, char* argv[])
 {
@@ -65,7 +65,7 @@ DSPint main(DSPint argc, char* argv[])
 	    }
 		//-------------------------------------------------
 
-		audio_invert_init(&inverter, 0.0r, -0.99r);
+		audio_invert_init(&inverter, 1.0r, 0.5r);
 
 		// Processing loop
 		//-------------------------------------------------

@@ -9,15 +9,13 @@
 #include "common.h"
 #include <stdio.h>
 
-void audio_invert_init(inverter_data_t * data, DSPfract degree, DSPfract gain)
+void audio_invert_init(__memY inverter_data_t * data, DSPfract degree, DSPfract gain)
 {
-//	data->degree = degree;
-//	data->gain = gain;
 	data->degree = degree; // FRACT_NUM(0.0);
 	data->gain = gain;  //FRACT_NUM(-0.99);
 }
 
-void gst_audio_invert_transform(inverter_data_t * data, DSPfract * input, DSPfract * output)
+void gst_audio_invert_transform(__memY inverter_data_t * data, __memX DSPfract * input, __memX DSPfract * output)
 {
 	DSPint i;
 	DSPfract dry = FRACT_NUM(0.9999) - data->degree;
